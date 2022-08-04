@@ -11,6 +11,7 @@ body {
   overflow: hidden;
 }
 
+/*--body: main element--*/
 .main-cont {
   width: 100vw;
   height: 100vh;
@@ -20,6 +21,7 @@ body {
   position: relative;
 }
 
+/*--body: p element--*/
 .main-text {
   text-align: center;
   color: #013a31;
@@ -29,6 +31,7 @@ body {
   position: relative;
 }
 
+/*--body: a element--*/
 .link-home {
   font-family: 'Square Peg', cursive;
   display:flex;
@@ -36,5 +39,4 @@ body {
   position: relative;
   margin-top: -1rem;
   font-size: 3rem;
-
 }
