@@ -3,6 +3,7 @@ const webRoute = require('./routes/web'); //-- Import the modular router for web
 const apiRoute = require('./routes/api'); //-- Import the modular router for api.js --
 const PORT = process.env.PORT || 3001; //-- assigned variable using HEROKU PORT --
 
+const path = require('path');
 //-- Init express --
 const app = express(); //-- DEFAULT: Basic express syntax --
 
@@ -20,13 +21,13 @@ app.use('/api', apiRoute); //-- for routes/api.js w/ add-on prefix --
 
 //-- DEFAULT: Basic express syntax --
 //-- This create your endpoints/router handlers or '/'
+
+// Wildcard route to direct users to a 404 page
 app.get('*', (req,res) => {
-  res.status(404).send('page not found'); //will change later
-})
-// // Wildcard route to direct users to a 404 page
-// app.get('*', (req, res) =>
-//   res.sendFile(path.join(__dirname, 'public/pages/404.html'))
-// );
+
+  res.status(404).sendFile
+  (path.join(__dirname, './public/404.html'));
+});
 
 //-- DEFAULT: Basic express syntax --
 //-- App listening to PORT --

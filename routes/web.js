@@ -20,5 +20,13 @@ router.get('/notes', (req,res) => {
 
 });
 
+//-- 'GET /404 ' root directory should return to 404.html --
+router.get('/404', (req,res) => {
+
+  //-- Helper function: using sendFile w/out using fs path
+  res.sendFile(path.join(publicPath, '404.html'));
+
+});
+
 //-- DEFAULT: to export --
 module.exports = router;
