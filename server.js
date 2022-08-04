@@ -8,7 +8,7 @@ const app = express(); //-- DEFAULT: Basic express syntax --
 
 //-- DEFAULT: Basic express syntax --
 //-- This create your endpoints/router handlers or '/'
-app.get('*', (req,res) {
+app.get('*', (req,res) => {
   res.status(404).send('page not found'); //will change later
 })
 // // Wildcard route to direct users to a 404 page
