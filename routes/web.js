@@ -20,6 +20,5 @@ router.get('/notes', (req,res) => {
 
 });
 
-
 //-- DEFAULT: to export --
 module.exports = router;

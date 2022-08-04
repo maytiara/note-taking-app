@@ -50,6 +50,12 @@ router.post('/notes', (req, res) => { //--endpoint for POST route --
   //-- this create a new note
   const created = saveNotes (req.body.title, req.body.text); //-- check middleware to parse JSON for this function to work --
 
+  res.json(created);
+});
+
+//-- 'DELETE /api/notes/:id' this receives a query parameter that contains id for deletion --
+route.delete('/api/notes/:id', (req, res) => {
+  
 });
 
 //-- DEFAULT: to export --
