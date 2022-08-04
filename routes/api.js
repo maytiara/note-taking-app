@@ -3,10 +3,14 @@ const router = require('express').Router(); //--DEFAULT: required for express
 const fs = require('fs'); //--file path
 const path = require('path'); //--DEFAULT: required for fs
 
+const dbPath = path.join(__dirname, '..', 'db.json');
+
 //-- Function to store the content of notes.html
 function storeNotes () {
 
   //-- this read the content of db.json
+  const content = fs.readFile (dbPath, 'utf-8'); //-- An asynchronous method, required for large file
+  return JSON.parse(content) || []; //-- Callback for an empty content
 }
 
 //-- 'GET /api/notes that reads the db.json file & return to saved data in JSON as storage
