@@ -4,13 +4,13 @@ const fs = require('fs'); //--file path
 const path = require('path'); //--DEFAULT: required for fs
 const uuid = require('uuid');
 
-const dbPath = path.join(__dirname, '..', 'db.json');
+const dbPath = path.join(__dirname, '..', 'db', 'db.json');
 
 //-- Function to store the content of notes.html
 function storeNotes () {
 
   //-- this read the content of db.json
-  const content = fs.readFile (dbPath, 'utf-8'); //-- An asynchronous method, required for large file
+  const content = fs.readFileSync(dbPath, 'utf-8'); //-- An synchronous method
   return JSON.parse(content) || []; //-- this function will return the content JSON otherwise || we added a Fallback for an empty content --
 }
 
@@ -32,6 +32,7 @@ function saveNotes(title, text){
 
   //-- save the new file using a synchronous method
   fs.writeFileSync(dbPath, JSON.stringify(notes), 'utf-8');
+  return createNote;
 }
 
 //-- 'GET /api/notes that reads the db.json file & return to saved data in JSON as storage
@@ -47,6 +48,8 @@ router.get('/notes', (req,res) => {
 router.post('/notes', (req, res) => { //--endpoint for POST route
 
   //-- this create a new note
+  saveNotes(title, text)
+
 });
 
 //-- DEFAULT: to export --
