@@ -12,7 +12,6 @@ app.use(express.static('public'));
 //-- Middleware for parsing JSON and urlencoded form data -- source: wk11-act28
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/api', api);
 
 //-- Middleware to Load the web/route
 app.use(webRoute); //-- for routes/web.js --
