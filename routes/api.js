@@ -38,17 +38,15 @@ function saveNotes(title, text){
 function deleteNote(id){
 
   //-- receive the notes data --
-  const notes = receieveNotes();
+  const notes = storeNotes();
 
   //-- filter the notes by given id --
   //-- this function iterate the existing values and returns assigned data to a new array [] --
-  const filteredNotes = notes.filter((note) => {
-    return note.id !== id;
-  });
+  const filteredNotes = notes.filter((note) => note.id !== id);
 
   //-- save the notes
-  fs.writeFileSync(dbPath, JSON.stringify(filtered), 'utf-8');
-  console.log('File written successfully!');
+  fs.writeFileSync(dbPath, JSON.stringify(filteredNotes), 'utf-8');
+
 }
 
 //-- 'GET /api/notes that reads the db.json file & return to saved data in JSON as storage --
@@ -70,9 +68,16 @@ router.post('/notes', (req, res) => { //--endpoint for POST route --
 });
 
 //-- 'DELETE /api/notes/:id' this receives a query parameter that contains id for deletion --
-route.delete('/api/notes/:id', (req, res) => {
+router.delete('/notes/:id', (req, res) => {
+
+  //-- Calling the deleteNote function
+  deleteNote(req.params.id);
+
+  res.json({
+    data: 'ok',
+  })
   
-});
+})
 
 //-- DEFAULT: to export --
 module.exports = router;
