@@ -24,7 +24,7 @@ function saveNotes(title, text){
     text,
   }
 
-  //-- retrieve the existing note data
+  //-- retrieve the existing note data --
   const notes = storeNotes();
 
   //-- add the created note --
@@ -33,6 +33,20 @@ function saveNotes(title, text){
   //-- save the new file using a synchronous method --
   fs.writeFileSync(dbPath, JSON.stringify(notes), 'utf-8');
   return createNote;
+}
+
+function deleteNote(id){
+
+  //-- receive the notes data --
+  const notes = receieveNotes();
+
+  //-- filter the notes by given id --
+  //-- this function iterate the existing values and returns assigned data to a new array [] --
+  const filteredNotes = notes.filter((note) => {
+    return note.id !== id;
+  });
+
+  //-- save the notes
 }
 
 //-- 'GET /api/notes that reads the db.json file & return to saved data in JSON as storage --
