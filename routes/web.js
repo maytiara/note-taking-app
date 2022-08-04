@@ -12,7 +12,13 @@ router.get('/', (req,res) => {
 
 });
 
+//-- 'GET /notes ' root directory should return to notes.html --
+router.get('/', (req,res) => {
 
+  //-- Helper function: using sendFile w/out using fs path
+  res.sendFile(path.join(publicPath, 'notes.html'));
+
+});
 
 
 //-- DEFAULT: to export --
