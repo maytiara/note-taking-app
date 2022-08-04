@@ -47,6 +47,8 @@ function deleteNote(id){
   });
 
   //-- save the notes
+  fs.writeFileSync(dbPath, JSON.stringify(filtered), 'utf-8');
+  console.log('File written successfully!');
 }
 
 //-- 'GET /api/notes that reads the db.json file & return to saved data in JSON as storage --
