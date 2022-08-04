@@ -6,6 +6,12 @@ const PORT = process.env.PORT || 3001; //-- assigned variable using HEROKU PORT 
 //-- Init express --
 const app = express(); //-- DEFAULT: Basic express syntax --
 
+//-- Middleware (Deafult:Static) --
+app.use(express.static('public'));
+
+//-- Middleware to Load the web/route
+app.use(webRoute);
+
 // Define an API Endpoint
 
 //-- DEFAULT: Basic express syntax --
