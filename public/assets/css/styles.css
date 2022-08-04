@@ -81,7 +81,7 @@ body {
 
 /*--navigation bar--*/
 #nav-color {
-  background-color: rgb(243, 146, 0) !important;
+  background-color: #f39200 !important;
 }
 
 /*--navigation bar--*/
@@ -98,15 +98,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   background: url("../images/main-image-express.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
-  position: relative;
-}
-
-.hero::before {
-  
 }
