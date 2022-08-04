@@ -1,8 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+
 *,
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.main-cont {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.main-text {
+  text-align: center;
+  color: #013a31;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.75rem;
+  margin: -1rem 0 0 0;
+  position: relative;
+}
+
+.link-home {
+  font-family: 'Square Peg', cursive;
+  display:flex;
+  justify-content: center;
+  position: relative;
+  margin-top: -1rem;
+  font-size: 3rem;
+
 }
