@@ -1,4 +1,6 @@
 const express = require('express'); //-- DEFAULT: Basic express syntax --
+const webRoute = require('./routes/web'); //-- Import the modular router for web.js --
+const apiRoute = require('./routes/api'); //-- Import the modular router for api.js --
 const PORT = process.env.PORT || 3001; //-- assigned variable using HEROKU PORT --
 
 //-- Init express --
