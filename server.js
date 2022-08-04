@@ -10,9 +10,9 @@ const app = express(); //-- DEFAULT: Basic express syntax --
 app.use(express.static('public'));
 
 //-- Middleware to Load the web/route
-app.use(webRoute);
+app.use(webRoute); //-- for routes/web.js --
+app.use(apiRoute); //-- for routes/api.js --
 
-// Define an API Endpoint
 
 //-- DEFAULT: Basic express syntax --
 //-- This create your endpoints/router handlers or '/'
