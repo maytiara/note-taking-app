@@ -40,3 +40,24 @@ body {
   margin-top: -1rem;
   font-size: 3rem;
 }
+
+@media only screen and (max-width : 480px) {
+  /*--body: main element--*/
+  .main-cont {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 6rem;
+  }
+
+  /*--body: p element--*/
+  .main-text {
+    font-size: 1.65rem;
+    padding-top: -.5rem;
+  }
+
+  /*--body: a element--*/
+  .link-home {
+    margin-top: .75rem;
+    font-size: 2.65rem;
+  }  
+}
