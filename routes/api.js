@@ -10,14 +10,15 @@ function storeNotes () {
 
   //-- this read the content of db.json
   const content = fs.readFile (dbPath, 'utf-8'); //-- An asynchronous method, required for large file
-  return JSON.parse(content) || []; //-- Callback for an empty content
+  return JSON.parse(content) || []; //-- this function will return the content JSON otherwise || we added a Fallback for an empty content --
 }
 
 //-- 'GET /api/notes that reads the db.json file & return to saved data in JSON as storage
 router.get('/notes', (req,res) => {
 
-  //-- Helper function: using fs Path
-  
+  //-- this return the response from function storeNotes
+  const notes = storeNotes();
+  res.json(notes);
 
 });
 
