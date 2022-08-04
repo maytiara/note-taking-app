@@ -11,7 +11,7 @@ app.use(express.static('public'));
 
 //-- Middleware to Load the web/route
 app.use(webRoute); //-- for routes/web.js --
-app.use(apiRoute); //-- for routes/api.js --
+app.use('/api', apiRoute); //-- for routes/api.js w/ add-on prefix --
 
 
 //-- DEFAULT: Basic express syntax --
