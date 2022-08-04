@@ -78,6 +78,35 @@ body {
 }
 
 /*--Customise css--*/
+
+/*--navigation bar--*/
 #nav-color {
   background-color: rgb(243, 146, 0) !important;
+}
+
+/*--navigation bar--*/
+.second-title {
+  display: inline-block;
+  margin: 0;
+  color: #865100;
+}
+
+/*--main section--*/
+.hero {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: url("../images/main-image-express.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+}
+
+.hero::before {
+  
 }
