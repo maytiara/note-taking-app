@@ -2,6 +2,7 @@
 const router = require('express').Router(); //--DEFAULT: required for express
 const fs = require('fs'); //--file path
 const path = require('path'); //--DEFAULT: required for fs
+const uuid = require('uuid');
 
 const dbPath = path.join(__dirname, '..', 'db.json');
 
@@ -11,6 +12,26 @@ function storeNotes () {
   //-- this read the content of db.json
   const content = fs.readFile (dbPath, 'utf-8'); //-- An asynchronous method, required for large file
   return JSON.parse(content) || []; //-- this function will return the content JSON otherwise || we added a Fallback for an empty content --
+}
+
+//-- Function to pass all the arguments inside the db.json file
+function saveNotes(title, text){
+
+  //-- this create new note to db.json
+  const createNote = {
+    id: uuid.v4(),
+    title,
+    text,
+  }
+
+  //-- retrieve the existing note data
+  const notes = storeNotes();
+
+  //-- add the created note
+  notes.push(createNote);
+
+  //-- save the new file using a synchronous method
+  fs.writeFileSync(dbPath, JSON.stringify(notes), 'utf-8');
 }
 
 //-- 'GET /api/notes that reads the db.json file & return to saved data in JSON as storage
