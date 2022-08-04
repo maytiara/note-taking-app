@@ -22,5 +22,11 @@ router.get('/notes', (req,res) => {
 
 });
 
+//-- 'POST /api/notes' this receive a new note from the request body, then added to db.json file.
+router.post('/notes', (req, res) => { //--endpoint for POST route
+
+  //-- this create a new note
+});
+
 //-- DEFAULT: to export --
 module.exports = router;
