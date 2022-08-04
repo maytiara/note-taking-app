@@ -24,7 +24,6 @@ app.use('/api', apiRoute); //-- for routes/api.js w/ add-on prefix --
 
 // Wildcard route to direct users to a 404 page
 app.get('*', (req,res) => {
-
   res.status(404).sendFile
   (path.join(__dirname, './public/404.html'));
 });
